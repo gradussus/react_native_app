@@ -15,28 +15,25 @@ export default function App() {
         source={require("./assets/images/PhotoBG.png")}
       >
         <View style={styles.form}>
-          <View>
-            <TextInput
-              style={styles.input}
-              textAlign={"center"}
-              placeholder={"Логін"}
-            />
-          </View>
-          <View>
-            <TextInput
-              style={styles.input}
-              textAlign={"center"}
-              placeholder={"Адреса електронної пошти"}
-            />
-          </View>
-          <View style={{ marginTop: 20 }}>
-            <TextInput
-              style={styles.input}
-              textAlign={"center"}
-              placeholder={"Пароль"}
-              secureTextEntry={true}
-            />
-          </View>
+          <Text style={styles.title}>Реєстрація</Text>
+          <TextInput
+            style={styles.input}
+            textAlign={"center"}
+            placeholder={"Логін"}
+          />
+
+          <TextInput
+            style={styles.input}
+            textAlign={"center"}
+            placeholder={"Адреса електронної пошти"}
+          />
+
+          <TextInput
+            style={styles.input}
+            textAlign={"center"}
+            placeholder={"Пароль"}
+            secureTextEntry={true}
+          />
         </View>
       </ImageBackground>
       {/* <Text>Open up App.js to start working on your app!</Text> */}
@@ -55,11 +52,14 @@ const styles = StyleSheet.create({
     resizeMode: "cover",
   },
   input: {
-    margin: 50,
-    width: 100,
-    borderColor: "red",
+    marginTop: 16,
+    width: "100%",
+    height: 50,
+    borderColor: "#E8E8E8",
     borderStyle: "solid",
     borderWidth: 1,
+    borderRadius: 8,
+    backgroundColor: "#F6F6F6",
   },
   form: {
     height: "100%",
@@ -67,5 +67,11 @@ const styles = StyleSheet.create({
     marginTop: 263,
     borderRadius: 25,
     alignItems: "center",
+    paddingHorizontal: 16,
+  },
+  title: {
+    color: "black",
+    marginTop: 92,
+    fontSize: 30,
   },
 });
