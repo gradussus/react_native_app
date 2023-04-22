@@ -49,7 +49,11 @@ const styles = StyleSheet.create({
   },
   image: {
     flex: 1,
-    resizeMode: "cover",
+    // resizeMode: "cover",
+    position: "absolute",
+    top: 0,
+    right: 0,
+    left: 0,
   },
   input: {
     marginTop: 16,
