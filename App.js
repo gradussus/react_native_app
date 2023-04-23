@@ -26,6 +26,7 @@ export default function App() {
       >
         <KeyboardAvoidingView
           behavior={Platform.OS == "ios" ? "padding" : "height"}
+          keyboardVerticalOffset={-100}
           style={{ width: "100%" }}
         >
           <View style={styles.form}>
