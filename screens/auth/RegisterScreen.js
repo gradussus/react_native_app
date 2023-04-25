@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   StyleSheet,
   Text,
@@ -186,6 +186,13 @@ const styles = StyleSheet.create({
     height: "100%",
     borderRadius: 16,
   },
+  addAvatar: {
+    position: "absolute",
+    top: 81,
+    right: -12,
+    backgroundColor: "#fff",
+    borderRadius: 50,
+  },
   title: {
     fontFamily: "Roboto-Medium",
     marginTop: 92,
@@ -222,12 +229,5 @@ const styles = StyleSheet.create({
     color: "#1B4371",
     fontSize: 16,
     fontFamily: "Roboto-Regular",
-  },
-  addAvatar: {
-    position: "absolute",
-    top: 81,
-    right: -12,
-    backgroundColor: "#fff",
-    borderRadius: 50,
   },
 });
