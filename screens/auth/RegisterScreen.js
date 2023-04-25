@@ -12,6 +12,7 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
 } from "react-native";
+import { AntDesign } from "@expo/vector-icons";
 
 const initialState = {
   email: "",
@@ -57,6 +58,9 @@ export default function RegisterScreen({ navigation }) {
                   style={styles.avatar}
                   source={require("../../assets/images/defaultAvatar.png")}
                 ></Image>
+                <TouchableOpacity style={styles.addAvatar}>
+                  <AntDesign name="pluscircleo" size={25} color="#FF6C00" />
+                </TouchableOpacity>
               </View>
               <Text style={styles.title}>Реєстрація</Text>
               <View style={styles.input}>
@@ -105,10 +109,11 @@ export default function RegisterScreen({ navigation }) {
               </View>
               {!keyboard && (
                 <>
-                  <TouchableOpacity style={styles.submit}>
-                    <Text style={styles.btnItem} onPress={handleSubmit}>
-                      Зареєструватися
-                    </Text>
+                  <TouchableOpacity
+                    style={styles.submit}
+                    onPress={handleSubmit}
+                  >
+                    <Text style={styles.btnItem}>Зареєструватися</Text>
                   </TouchableOpacity>
                   <Text
                     onPress={() => navigation.navigate("Login")}
@@ -217,5 +222,12 @@ const styles = StyleSheet.create({
     color: "#1B4371",
     fontSize: 16,
     fontFamily: "Roboto-Regular",
+  },
+  addAvatar: {
+    position: "absolute",
+    top: 81,
+    right: -12,
+    backgroundColor: "#fff",
+    borderRadius: 50,
   },
 });
