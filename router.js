@@ -12,6 +12,9 @@ import PostsScreen from "./screens/main/PostsScreen";
 import CreateScreen from "./screens/main/CreateScreen";
 import ProfileScreen from "./screens/main/ProfileScreenn";
 
+import { Feather } from "@expo/vector-icons";
+import { View } from "react-native";
+
 export const useRoute = (isAuth) => {
   if (!isAuth) {
     return (
@@ -34,10 +37,53 @@ export const useRoute = (isAuth) => {
     );
   } else {
     return (
-      <MainTab.Navigator tabBar={}>
-        <MainTab.Screen name="Posts" component={PostsScreen} />
-        <MainTab.Screen name="Profile" component={ProfileScreen} />
-        <MainTab.Screen name="Create" component={CreateScreen} />
+      <MainTab.Navigator
+        screenOptions={{
+          tabBarShowLabel: false,
+          tabBarStyle: { height: 58 },
+          headerTitleAlign: "center",
+        }}
+      >
+        <MainTab.Screen
+          name="Posts"
+          component={PostsScreen}
+          options={{
+            tabBarIcon: ({ focused, size, color }) => (
+              <Feather name="grid" size={24} color="#212121" />
+            ),
+          }}
+        />
+        <MainTab.Screen
+          name="Create"
+          component={CreateScreen}
+          options={{
+            tabBarIcon: ({ focused, size, color }) => (
+              <Feather name="plus" size={24} color="#fff" />
+            ),
+            headerLeft: () => (
+              <View style={{ marginLeft: 20 }}>
+                <Feather name="arrow-left" size={24} color="#212121" />
+              </View>
+            ),
+            headerStyle: {},
+            tabBarIconStyle: {
+              backgroundColor: "#FF6C00",
+              width: 70,
+              borderRadius: 20,
+              marginTop: 9,
+              marginBottom: 9,
+            },
+          }}
+        />
+        <MainTab.Screen
+          name="Profile"
+          component={ProfileScreen}
+          options={{
+            tabBarIcon: ({ focused, size, color }) => (
+              <Feather name="user" size={24} color="black" />
+            ),
+          }}
+        />
       </MainTab.Navigator>
     );
   }
