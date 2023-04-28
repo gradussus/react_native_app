@@ -23,14 +23,14 @@ export const useRoute = (isAuth) => {
           options={{
             headerShown: false,
           }}
-          name="Register"
+          name="Реєстрація"
           component={RegisterScreen}
         />
         <AuthStack.Screen
           options={{
             headerShown: false,
           }}
-          name="Login"
+          name="Логін"
           component={LoginScreen}
         />
       </AuthStack.Navigator>
@@ -40,21 +40,28 @@ export const useRoute = (isAuth) => {
       <MainTab.Navigator
         screenOptions={{
           tabBarShowLabel: false,
-          tabBarStyle: { height: 58 },
+          tabBarStyle: {
+            height: 58,
+          },
           headerTitleAlign: "center",
         }}
       >
         <MainTab.Screen
-          name="Posts"
+          name="Публікації"
           component={PostsScreen}
           options={{
             tabBarIcon: ({ focused, size, color }) => (
               <Feather name="grid" size={24} color="#212121" />
             ),
+            headerRight: () => (
+              <View style={{ marginRight: 20 }}>
+                <Feather name="log-out" size={24} color="#BDBDBD" />
+              </View>
+            ),
           }}
         />
         <MainTab.Screen
-          name="Create"
+          name="Створити публікацію"
           component={CreateScreen}
           options={{
             tabBarIcon: ({ focused, size, color }) => (
@@ -65,7 +72,6 @@ export const useRoute = (isAuth) => {
                 <Feather name="arrow-left" size={24} color="#212121" />
               </View>
             ),
-            headerStyle: {},
             tabBarIconStyle: {
               backgroundColor: "#FF6C00",
               width: 70,
@@ -76,11 +82,11 @@ export const useRoute = (isAuth) => {
           }}
         />
         <MainTab.Screen
-          name="Profile"
+          name="Профіль"
           component={ProfileScreen}
           options={{
             tabBarIcon: ({ focused, size, color }) => (
-              <Feather name="user" size={24} color="black" />
+              <Feather name="user" size={24} color="#212121" />
             ),
           }}
         />
