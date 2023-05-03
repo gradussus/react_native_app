@@ -4,7 +4,6 @@ import {
   Text,
   View,
   ImageBackground,
-  Image,
   TextInput,
   TouchableOpacity,
   KeyboardAvoidingView,
@@ -12,7 +11,6 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
 } from "react-native";
-import { AntDesign } from "@expo/vector-icons";
 
 const initialState = {
   email: "",
